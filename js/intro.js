@@ -62,7 +62,7 @@ function fadeOutMusicAndRedirect() {
 
             // ✅ Ensure redirection works in Safari
             setTimeout(() => {
-                window.location.href = "/pages/level1.html"; 
+                window.location.href = "../pages/level1.html"; 
             }, 500);
         }
     }, 200); // Gradual fade every 200ms
