@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (restartButton) {
         restartButton.addEventListener("click", function () {
             console.log("🔄 Redirecting to home...");
-            window.location.href = "../pages/home.html"; // Adjust path if needed
+            window.location.href = "../index.html"; // Adjust path if needed
         });
     }
 
