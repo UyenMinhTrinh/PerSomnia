@@ -288,7 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("mbtiResult", JSON.stringify(resultData));
         console.log("MBTI result stored successfully:", JSON.stringify(resultData));
     
-        window.location.href = "../pages/result.html"; // Redirect to result page
+        window.location.href = "result.html"; // Redirect to result page
     }  
 
     displayQuestion();
