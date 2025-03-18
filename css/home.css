@@ -204,7 +204,7 @@ body {
 }
 
 /* Responsive Adjustments */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
     .text-section h1 {
         font-size: 22px;
     }
@@ -215,7 +215,7 @@ body {
         padding: 10px 20px 20px 20px;
     }
     .cta-button {
-        width: 250px;
+        width: 320px;
     }
     .text-section img {
         max-width: 320px;

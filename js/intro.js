@@ -8,17 +8,6 @@ let fadeInterval;
 let chaosTimeout;
 let glitchSound; // Declare glitch sound globally
 
-function isMobileDevice() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-}
-
-if (!isMobileDevice()) {
-    // ✅ Play music ONLY on desktop/laptop
-    music.play().catch(error => console.warn("🔇 Music blocked:", error));
-} else {
-    console.log("📵 Music disabled on mobile.");
-}
-
 // Function: Typewriter Effect
 function typeWriter(textArray, index = 0, letterIndex = 0, currentText = "") {
     if (index < textArray.length) {
@@ -70,7 +59,11 @@ function fadeOutMusicAndRedirect() {
             clearInterval(fadeInterval);
             music.pause();
             music.currentTime = 0;
-            window.location.href = "/pages/level1.html"; // Redirect ONLY after fade out
+
+            // ✅ Ensure redirection works in Safari
+            setTimeout(() => {
+                window.location.href = "/pages/level1.html"; 
+            }, 500);
         }
     }, 200); // Gradual fade every 200ms
 }
