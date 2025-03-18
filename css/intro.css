@@ -1,0 +1,327 @@
+/* Global Styling */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #b8cdaa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Top & Bottom Bars */
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #e6f2a2;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b8cdaa;
+    -webkit-text-fill-color: #fff5eb;
+    -webkit-text-stroke: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Intro Card */
+.intro-container {
+    background-color: #fff5eb;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, floatUpDown 4s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Pattern Styling */
+.pattern {
+    font-size: 20px;
+    color: #d37d6b;
+    margin-bottom: 10px;
+    -webkit-text-fill-color: #fff5eb;
+    -webkit-text-stroke: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Typewriter Text Styling */
+.intro-text {
+    color: #d37d6b;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out;
+    display: block;
+    margin-top: 20px;
+    text-shadow: 2px 2px 10px rgba(211, 125, 107, 0.3);
+}
+
+/* Typewriter Text Appears One by One */
+.show-text {
+    opacity: 1;
+}
+
+/* Button Styling */
+.cta-button {
+    background-color: #d37d6b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.2s ease-in-out, background-color 0.3s;
+    text-shadow: 2px 2px 10px rgba(211, 125, 107, 0.5);
+}
+
+/* Button Appears After Text Animation */
+.cta-button.show {
+    opacity: 1;
+}
+
+/* Button Bounce & Glow Effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(211, 125, 107, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(211, 125, 107, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(211, 125, 107, 0.5);
+    }
+}
+
+.cta-button {
+    background-color: #d37d6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    animation: pulseGlow 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: #c06958;
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Button Press Effect */
+.cta-button:active {
+    transform: scale(0.95);
+}
+
+/* Floating Animation */
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Global Styling */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #b8cdaa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Top & Bottom Bars */
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #e6f2a2;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b8cdaa;
+    -webkit-text-fill-color: #fff5eb;
+    -webkit-text-stroke: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Intro Card */
+.intro-container {
+    background-color: #fff5eb;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, floatUpDown 4s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* --- HORROR MODE ACTIVATION --- */
+
+/* Darker Background */
+.horror-mode {
+    background-color: black !important;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Creepy Top Bar */
+.horror-top-bar {
+    background-color: #4c0000 !important;
+}
+
+/* Creepy Text Container */
+.horror-intro-container {
+    background-color: #1a0000 !important;
+    color: #ff0000 !important;
+    text-shadow: 2px 2px 10px #ff0000;
+}
+
+/* Glitching Text Effect */
+.horror-text {
+    animation: glitch 0.15s infinite alternate;
+}
+
+/* Screen Flicker Effect */
+@keyframes flicker {
+    0% { background-color: black; }
+    50% { background-color: #2b0000; }
+    100% { background-color: black; }
+}
+
+.flicker {
+    animation: flicker 0.1s infinite;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% { text-shadow: 2px 2px red, -2px -2px blue; }
+    50% { text-shadow: -2px 2px blue, 2px -2px red; }
+    100% { text-shadow: 2px -2px red, -2px 2px blue; }
+}
+
+/* ERROR WINDOWS */
+.error-window {
+    position: fixed;
+    width: 250px;
+    height: 150px;
+    background: #c0c0c0;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: black;
+    z-index: 1000;
+}
+
+/* ERROR HEADER */
+.error-header {
+    background: navy;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+/* FAKE ERROR BUTTON */
+.fake-button {
+    background: #d3d3d3;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.fake-button:hover {
+    background: red;
+    color: white;
+}
+
+/* Flashing Fix Button */
+@keyframes flash {
+    0% { background-color: red; color: black; }
+    50% { background-color: black; color: red; }
+    100% { background-color: red; color: black; }
+}
+
+/* SCREEN SHAKE */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+    animation: shake 0.1s infinite;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .intro-container {
+        padding: 10px 20px 20px 20px;
+    }
+}

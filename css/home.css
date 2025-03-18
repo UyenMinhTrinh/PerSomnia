@@ -1,0 +1,223 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #b8cdaa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Top Bar Animation */
+@keyframes slideText {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #e6f2a2;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b8cdaa;
+    -webkit-text-fill-color: #fff5eb;
+    -webkit-text-stroke: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.top-bar span {
+    display: inline-block;
+    animation: slideText 5s linear infinite;
+}
+
+/* Container Floating Animation */
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Container Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.container {
+    background-color: #fff5eb;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, floatUpDown 4s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Container */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Section Slide-in */
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.text-section {
+    text-align: center;
+    width: 100%;
+    animation: slideIn 1s ease-out;
+}
+
+.text-section img {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column; /* Makes buttons appear on separate lines */
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Button Bounce & Glow Effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(211, 125, 107, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(211, 125, 107, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(211, 125, 107, 0.5);
+    }
+}
+
+.cta-button {
+    background-color: #d37d6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    animation: pulseGlow 2s infinite;
+    width:400px;
+    height: 50px;
+}
+
+.cta-button:hover {
+    background-color: #c06958;
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Button Press Effect */
+.cta-button:active {
+    transform: scale(0.95);
+}
+
+/* Floating Messages */
+.floating-message {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    color: #333;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeUp 3s ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes fadeUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Hiding the button temporarily */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 600px) {
+    .text-section h1 {
+        font-size: 22px;
+    }
+    .text-section p {
+        font-size: 16px;
+    }
+    .container {
+        padding: 10px 20px 20px 20px;
+    }
+    .cta-button {
+        width: 320px;
+    }
+    .text-section img {
+        max-width: 320px;
+    }
+}

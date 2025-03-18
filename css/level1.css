@@ -1,0 +1,189 @@
+/* Global Styling */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #b8cdaa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #e6f2a2;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #b8cdaa;
+    -webkit-text-fill-color: #fff5eb;
+    -webkit-text-stroke: 1.5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Main Container */
+.quiz-container {
+    background-color: #fff5eb;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    height: 80vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out, floatUpDown 4s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Typewriter Effect for Question */
+.level1-text {
+    color: #d37d6b;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 80%;
+    opacity: 1;
+    text-shadow: 2px 2px 10px rgba(211, 125, 107, 0.3);
+}
+
+/* Answer Grid (Kahoot-style 2x2 layout) */
+.answers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+/* Answer Button Styling */
+.answer-button {
+    background-color: #d37d6b;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(211, 125, 107, 0.5);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards, glowPulse 2s infinite alternate;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0px 4px 15px rgba(211, 125, 107, 0.5);
+}
+
+/* Hover Effects */
+.answer-button:hover { 
+    background-color: #c06958;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(211, 125, 107, 1);
+}
+
+/* Button Appearance Delay */
+.show {
+    opacity: 1;
+}
+
+/* Soft Glowing Effect */
+@keyframes glowPulse {
+    0% { box-shadow: 0px 4px 15px rgba(211, 125, 107, 0.5); }
+    100% { box-shadow: 0px 8px 20px rgba(211, 125, 107, 0.8); }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 🌙 Dreamy Fade & Float Animation for Image */
+.question-image {
+    width: 80%;
+    max-height: 300px;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* 🌊 Dreamy Fade & Float for Short Text */
+@keyframes textFloat {
+    0% { opacity: 0; transform: translateY(10px); filter: blur(5px); }
+    50% { opacity: 1; transform: translateY(0); filter: blur(2px); }
+    100% { opacity: 1; transform: translateY(-2px); filter: blur(0px); }
+}
+
+.short-text {
+    font-size: 18px;
+    color: #d37d6b;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    text-shadow: 2px 2px 10px rgba(211, 125, 107, 0.3);
+}
+
+/* 🌫️ Fade-Out Effect */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .answers-grid { 
+        grid-template-columns: 1fr;
+    }
+    .quiz-container {
+        padding: 10px 20px 20px 20px;
+    }
+    .level1-text {
+        font-size: 18px;
+    }
+    .cta-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
