@@ -1,6 +1,6 @@
 const typewriterElement = document.querySelector(".intro-text");
 const button = document.getElementById("start-quiz");
-const music = new Audio("../assets/audio/intro.mp3");
+const music = new Audio("assets/audio/intro.mp3");
 music.loop = false;
 music.volume = 0.6;
 
@@ -59,7 +59,7 @@ function fadeOutMusicAndRedirect() {
             clearInterval(fadeInterval);
             music.pause();
             music.currentTime = 0;
-            window.location.href = "../pages/level1.html"; // Redirect ONLY after fade out
+            window.location.href = "/pages/level1.html"; // Redirect ONLY after fade out
         }
     }, 200); // Gradual fade every 200ms
 }
