@@ -17,10 +17,9 @@ There is no going back. Good luck.
 ✔️ **Typewriter-Style Text Animation** – Because reality must unravel dramatically.  
 ✔️ **Music That Fades at the Worst Possible Moment** – Hope you weren’t getting comfortable.  
 ✔️ **Questionable MBTI System** – This test might be accurate, or the dream just made it up.  
-✔️ **16 Enigmatic Personas** – Each comes with a **poster** (to remind you of who you are now).  
-✔️ **Surprise Wii Sports References** – Because why not.  
+✔️ **16 Enigmatic Personas** – Each comes with a **poster** (to remind you of who you are now). 
 ✔️ **Cosmic Horror, but Cute** – Adorable existential dread.  
-✔️ **Mobile-Friendly (Sort of)** – Works on phones! Just… don’t ask about autoplay.  
+✔️ **Mobile-Friendly (Allegedly)** – Works on phones! Kind of. Maybe. Look, it tries its best. Autoplay? Don’t even bring it up.
 
 ---
 
@@ -50,5 +49,5 @@ Want to mess with the dream? Fine. Here’s how to run it yourself:
 
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/your-username/PerSomnia.git
+git clone https://github.com/uyenminhtrinh/PerSomnia.git
 cd PerSomnia
