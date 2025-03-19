@@ -38,7 +38,7 @@ There is no going back. Good luck.
 ## **🎮 Play Now**  
 
 **🔗 Enter the Dream Here →**  
-[https://your-username.github.io/PerSomnia](https://your-username.github.io/PerSomnia)  
+[https://uyenminhtrinh.github.io/PerSomnia/](https://uyenminhtrinh.github.io/PerSomnia/)  
 
 (*No refunds. The dream already spent your soul credit.*)  
 
