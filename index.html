@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PerSomnia</title>
-    <link rel="stylesheet" href="./css/home.css">
-</head>
-<body>
-    <div class="top-bar">
-        <div class="top-bar">⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚</div>
-    </div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PerSomnia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <div class="container">
-        <div class="text-section">
-            <img src="assets/images/logo.png" alt="PerSomnia Logo">
-        </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet" />
 
-        <!-- Centered Buttons -->
-        <div class="button-container">
-            <button class="cta-button" id="start-quiz">‧͙⁺˚*･༓☾ 𝙴𝚗𝚝𝚎𝚛 𝚝𝚑𝚎 𝙳𝚛𝚎𝚊𝚖 ☽༓･*˚⁺‧͙</button>  
-            <button class="cta-button" id="exit-quiz">°•. 𝚆𝚊𝚒𝚝, 𝚆𝚑𝚎𝚛𝚎 𝙰𝚛𝚎 𝚈𝚘𝚞 𝙶𝚘𝚒𝚗𝚐? .•°</button>  
-        </div>
-    </div>
-
-    <div class="top-bar">
-        <div class="top-bar">⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚</div>
-    </div>
-
-    <script>
-document.getElementById("start-quiz").addEventListener("click", function() {
-    window.location.href = "pages/intro.html";
-});
-
-let exitButton = document.getElementById("exit-quiz");
-let clickCount = 0;
-
-exitButton.addEventListener("click", function() {
-    let dreamMessages = [
-        "☁️ A tiny cloud says: 'You can’t leave just yet…'",
-        "🌙 The moon winks at you. 'Are you sure about that?'",
-        "✨ A shooting star whispers: 'Stay a little longer…'",
-        "💤 The dream hums softly. 'You’re exactly where you should be…'",
-        "🌌 The cosmos shifts. Did you forget something?",
-        "🌀 A dreamy voice asks: 'Why rush? Enjoy the moment…'",
-    ];
-
-    let randomMessage = dreamMessages[Math.floor(Math.random() * dreamMessages.length)];
-    createFloatingMessage(randomMessage);
-
-    clickCount++;
-
-    if (clickCount == 1) {
-        exitButton.textContent = "°•. 𝙷𝚖𝚖𝚖... 𝙰𝚛𝚎 𝚈𝚘𝚞 𝚂𝚞𝚛𝚎?  .•°";
-    } else if (clickCount == 2) {
-        exitButton.textContent = "°•. 𝚈𝚘𝚞’𝚛𝚎 𝙶𝚎𝚝𝚝𝚒𝚗𝚐 𝚂𝚕𝚎𝚎𝚙𝚢...  .•°";
-    } else if (clickCount == 3) {
-        exitButton.textContent = "°•. 𝚃𝚑𝚎 𝙳𝚛𝚎𝚊𝚖 𝚒𝚜 𝚆𝚊𝚝𝚌𝚑𝚒𝚗𝚐..  .•°";
-    } else if (clickCount == 4) {
-        exitButton.textContent = "°•. 𝚁𝚎𝚊𝚕𝚒𝚝𝚢 𝚒𝚜 𝙵𝚊𝚍𝚒𝚗𝚐…  .•°";
-    } else if (clickCount == 5) {
-        exitButton.classList.add("hidden"); // Hide after 5 tries
-        createFloatingMessage("😴 The dream pulls you back...");
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            title: ['Bebas Neue', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+          },
+          colors: {
+            primary: '#F6A680',
+            background: '#FDF6EE',
+          }
+        }
+      }
     }
-});
+  </script>
 
-function createFloatingMessage(text) {
-    let messageBubble = document.createElement("div");
-    messageBubble.classList.add("floating-message");
-    messageBubble.textContent = text;
-    document.body.appendChild(messageBubble);
+  <style>
+    body {
+      background-color: #FDF6EE;
+    }
+  </style>
+</head>
 
-    // Set random position
-    messageBubble.style.left = Math.random() * 60 + 20 + "%";
-    messageBubble.style.top = Math.random() * 40 + 30 + "%";
+<body class="flex flex-col items-center justify-center min-h-screen p-6 text-primary">
 
-    // Remove after a few seconds
-    setTimeout(() => {
-        messageBubble.remove();
-    }, 4000);
-}
+  <!-- Top bar: ICON + SLOGAN (side by side, left aligned as one block) -->
+  <div class="flex items-start w-full max-w-3xl mb-4 gap-3">
 
-    </script>
-    
+    <!-- Icons Left -->
+    <div class="flex gap-2 text-3xl pt-1">
+      <span>✽</span>
+      <span>✤</span>
+      <span>✣</span>
+    </div>
+
+    <!-- Slogan Right -->
+    <div class="text-[17px] md:text-[20px] font-serif font-medium leading-tight tracking-wide">
+      <div>TRUST YOUR INSTINCTS,</div>
+      <div>QUESTION YOUR LIFE CHOICES LATER.</div>
+    </div>
+
+  </div>
+
+  <!-- Cat Image -->
+  <!-- Mobile image (shown on small screens only) -->
+  <img src="images/chonky.png" 
+      alt="cat chonk" 
+      class="w-full max-w-3xl rounded-md object-cover h-[400px] md:hidden mb-6" />
+
+  <!-- Desktop image (shown on md+ screens only) -->
+  <img src="images/2eyes.png" 
+      alt="cat 2 eyes" 
+      class="hidden md:block w-full max-w-3xl rounded-md object-cover h-60 mb-6" />
+
+  <!-- Bottom Content: PERSOMNIA + Paragraph -->
+  <div class="flex flex-col md:flex-row w-full max-w-3xl items-start gap-4 md:gap-8">
+
+    <!-- PERSOMNIA -->
+    <h1 class="text-[80px] md:text-[110px] leading-none font-title">
+      PERSOMNIA
+    </h1>
+
+    <!-- Paragraph -->
+    <div class="flex flex-col gap-1 text-[20px] md:text-[19px] font-serif max-w-md">
+
+      <p class="leading-tight text-justify mt-[-10px]">
+        <span class="italic text-sm">(n)</span> Please don’t close this tab. If this project fails, my boss — a cat running an illegal business — will electrocute me. I haven’t eaten in seven days. Please. I’m running out of time. 
+        <a href="#" class="underline hover:text-[#f6a680]/80">Help me.</a>
+      </p>
 </body>
 </html>

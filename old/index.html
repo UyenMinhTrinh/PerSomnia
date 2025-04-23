@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerSomnia</title>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar">⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚</div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <img src="assets/images/logo.png" alt="PerSomnia Logo">
+        </div>
+
+        <!-- Centered Buttons -->
+        <div class="button-container">
+            <button class="cta-button" id="start-quiz">‧͙⁺˚*･༓☾ 𝙴𝚗𝚝𝚎𝚛 𝚝𝚑𝚎 𝙳𝚛𝚎𝚊𝚖 ☽༓･*˚⁺‧͙</button>  
+            <button class="cta-button" id="exit-quiz">°•. 𝚆𝚊𝚒𝚝, 𝚆𝚑𝚎𝚛𝚎 𝙰𝚛𝚎 𝚈𝚘𝚞 𝙶𝚘𝚒𝚗𝚐? .•°</button>  
+        </div>
+    </div>
+
+    <div class="top-bar">
+        <div class="top-bar">⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚⋆˚｡⋆୨✧୧˚｡˚</div>
+    </div>
+
+    <script>
+document.getElementById("start-quiz").addEventListener("click", function() {
+    window.location.href = "pages/intro.html";
+});
+
+let exitButton = document.getElementById("exit-quiz");
+let clickCount = 0;
+
+exitButton.addEventListener("click", function() {
+    let dreamMessages = [
+        "☁️ A tiny cloud says: 'You can’t leave just yet…'",
+        "🌙 The moon winks at you. 'Are you sure about that?'",
+        "✨ A shooting star whispers: 'Stay a little longer…'",
+        "💤 The dream hums softly. 'You’re exactly where you should be…'",
+        "🌌 The cosmos shifts. Did you forget something?",
+        "🌀 A dreamy voice asks: 'Why rush? Enjoy the moment…'",
+    ];
+
+    let randomMessage = dreamMessages[Math.floor(Math.random() * dreamMessages.length)];
+    createFloatingMessage(randomMessage);
+
+    clickCount++;
+
+    if (clickCount == 1) {
+        exitButton.textContent = "°•. 𝙷𝚖𝚖𝚖... 𝙰𝚛𝚎 𝚈𝚘𝚞 𝚂𝚞𝚛𝚎?  .•°";
+    } else if (clickCount == 2) {
+        exitButton.textContent = "°•. 𝚈𝚘𝚞’𝚛𝚎 𝙶𝚎𝚝𝚝𝚒𝚗𝚐 𝚂𝚕𝚎𝚎𝚙𝚢...  .•°";
+    } else if (clickCount == 3) {
+        exitButton.textContent = "°•. 𝚃𝚑𝚎 𝙳𝚛𝚎𝚊𝚖 𝚒𝚜 𝚆𝚊𝚝𝚌𝚑𝚒𝚗𝚐..  .•°";
+    } else if (clickCount == 4) {
+        exitButton.textContent = "°•. 𝚁𝚎𝚊𝚕𝚒𝚝𝚢 𝚒𝚜 𝙵𝚊𝚍𝚒𝚗𝚐…  .•°";
+    } else if (clickCount == 5) {
+        exitButton.classList.add("hidden"); // Hide after 5 tries
+        createFloatingMessage("😴 The dream pulls you back...");
+    }
+});
+
+function createFloatingMessage(text) {
+    let messageBubble = document.createElement("div");
+    messageBubble.classList.add("floating-message");
+    messageBubble.textContent = text;
+    document.body.appendChild(messageBubble);
+
+    // Set random position
+    messageBubble.style.left = Math.random() * 60 + 20 + "%";
+    messageBubble.style.top = Math.random() * 40 + 30 + "%";
+
+    // Remove after a few seconds
+    setTimeout(() => {
+        messageBubble.remove();
+    }, 4000);
+}
+
+    </script>
+    
+</body>
+</html>
