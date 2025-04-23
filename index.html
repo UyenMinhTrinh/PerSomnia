@@ -76,8 +76,44 @@
     <div class="flex flex-col gap-1 text-[20px] md:text-[19px] font-serif max-w-md">
 
       <p class="leading-tight text-justify mt-[-10px]">
-        <span class="italic text-sm">(n)</span> Please don’t close this tab. If this project fails, my boss — a cat running an illegal business — will electrocute me. I haven’t eaten in seven days. Please. I’m running out of time. 
-        <a href="#" class="underline hover:text-[#f6a680]/80">Help me.</a>
+        <span class="italic text-sm">(n)</span> 
+        Please don’t close this tab. If this project fails, my boss — a cat running an illegal business — 
+        will electrocute me. I haven’t eaten in seven days. Please. I’m running out of time. 
+        <a href="#" id="revealSecret" class="underline hover:text-[#f6a680]/80">Help me.</a>
       </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('revealSecret')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      // Hide all current content
+      [...document.body.children].forEach(child => {
+        if (child.id !== 'secret') child.style.display = 'none';
+      });
+      // Show the secret screen
+      const secret = document.getElementById('secret');
+      secret.classList.remove('hidden');
+      secret.classList.add('flex');
+    });
+
+    document.getElementById('startQuiz')?.addEventListener('click', function () {
+      // Replace this with your actual quiz section logic later
+      alert("Quiz will start soon...");
+    });
+  </script>
+  
+  <!-- Secret Intro Screen -->
+  <div id="secret" class="hidden flex items-center justify-center min-h-screen p-6 bg-background text-primary">
+    <div class="text-center font-serif text-[18px] md:text-[22px] leading-relaxed max-w-xl">
+      <p>
+        If you’re seeing this, it’s already too late. I tried to break free, but the Cat twisted everything.
+        Every answer feeds him now. Don’t stop. Don’t think. He’s watching.
+      </p>
+      <button id="startQuiz" class="mt-6 px-4 py-2 border border-primary rounded-full text-sm hover:bg-primary hover:text-white transition-all duration-300">
+        Move Now
+      </button>
+    </div>
+  </div>
 </body>
 </html>
