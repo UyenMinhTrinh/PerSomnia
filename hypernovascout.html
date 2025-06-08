@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hypernova Scout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Elika Gorica';
+      src: url('./fonts/ElikaGorica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-title {
+      font-family: 'Elika Gorica', serif;
+    }
+
+    .font-body {
+      font-family: 'GFS Artemisia', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center text-[#0236fc] bg-[radial-gradient(circle,_#eefb57_35%,_#ffffff_100%)] px-6 py-10">
+
+  <!-- INTRO SCREEN -->
+  <div id="introScreen" class="flex flex-col items-center text-center">
+
+  <p class="text-sm md:text-base font-body tracking-wide font-semibold mb-4">
+    ARE YOU LOST? NO. YOU ARE EXACTLY WHERE<br/>
+    THE WIND WANTS YOU TO BE
+  </p>
+
+<h1 class="text-6xl md:text-8xl font-title leading-none mb-8">
+  HYPERNOVA<br />SCOUT
+</h1>
+
+  <button onclick="revealNext()" class="px-6 py-3 border-2 border-[#0236fc] rounded-full text-sm font-body hover:bg-[#0236fc] hover:text-[#eefb57] transition-all">
+    Move Now
+  </button>
+  
+  </div>
+  
+<!-- CHARACTER SCREEN -->
+<div id="hypernovaScoutScreen" class="hidden w-full max-w-6xl mx-auto flex flex-col items-center gap-12">
+
+  <!-- Top Section: Image + Description -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+    <!-- Image + Title -->
+    <div class="flex flex-col items-center text-center">
+      <img
+          id="hypImage"
+          src="./images/hypernova-scout.png"
+          alt="Misty Bloomlet"
+          class="w-72 md:w-[28rem] cursor-pointer transition duration-300 ease-in-out"
+        />
+      <p class="font-body text-xl md:text-2xl font-bold mt-4 tracking-wide">HYPERNOVA SCOUT</p>
+    </div>
+
+    <!-- Description -->
+    <div class="text-sm md:text-base space-y-5 text-center font-body max-w-md">
+      <p>
+       .𖥔 🛸 ˖🛸── .✦
+      </p>
+      <br />
+      <p>
+        Moves first, thinks later. Usually mid-air.
+      </p>
+      <p>
+        Lives for thrills, even if it means breaking something. Including physics.
+      </p>
+      <p>
+        Speed limit? More like a polite suggestion.
+      </p>
+      <br />
+      <p>
+       .𖥔 🛸 ˖🛸── .✦
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Section: Poetic Paragraphs -->
+  <div class="text-sm md:text-base font-body max-w-3xl mx-auto space-y-10 px-4 text-left text-[#0236fc] leading-relaxed">
+    <p class="max-w-[38rem] mx-auto ml-0">
+      You don’t enter scenes—you blast through them. Standing still is not an option, and neither is subtlety. Your vibe is “detonated energy drink with goggles.”
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-6 md:ml-20">
+      You treat the universe like a playground with no supervision. You don’t wait for permission—you yell “YOLO” mid-jump, then somehow stick the landing in style
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-12 md:ml-40">
+      People think you’re reckless, but there’s a method to your mayhem. It just involves a lot of improvising, dodging, and dramatic slow-motion explosions.
+    </p>
+  </div>
+
+
+
+  <script>
+  const gentleImage = document.getElementById('hypImage');
+  const images = ["./images/hypernova-scout.png", "./images/gentle-whisper2.png"];
+  let currentIndex = 0;
+
+    gentleImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      gentleImage.src = images[currentIndex];
+    });
+
+    function revealNext() {
+      document.getElementById('introScreen').classList.add('hidden');
+      document.getElementById('hypernovaScoutScreen').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>

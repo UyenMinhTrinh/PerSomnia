@@ -2,52 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PerSomnia</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @font-face {
-      font-family: "Awesome Lathusca";
-      src: url("./fonts/AwesomeLathusca.ttf") format("truetype");
+      font-family: 'TAN Nimbus';
+      src: url('./fonts/TanNimbus.otf') format('opentype');
     }
 
     @font-face {
-      font-family: "GFS Artemisia";
-      src: url("./fonts/GFSArtemisiaBold.ttf") format("truetype");
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
     }
 
-    .persomnia-title {
-      font-family: "Awesome Lathusca", serif;
+    .font-nimbus {
+      font-family: 'TAN Nimbus', serif;
     }
 
-    .persomnia-desc {
-      font-family: "GFS Artemisia", serif;
+    .font-artemisia {
+      font-family: 'GFS Artemisia', serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #fcf5ed, #fd7a1b);
     }
   </style>
 </head>
-<body class="bg-[#fcf5ed] text-[#f6a680]">
-  <div class="max-w-screen-xl mx-auto px-4 md:px-8 py-6 flex flex-col gap-6">
-    
-    <!-- Full-width tulip image -->
-    <img src="./images/tulips1.jpg" 
-        alt="Tulips"
-        class="w-full object-cover h-[450px] sm:h-[400px] md:h-auto rounded-none" />
 
-    <!-- 2-column text under image -->
-    <div class="w-full flex flex-col md:flex-row md:items-start md:justify-start gap-2 md:gap-6 mt-2">
-      <!-- Title -->
-      <h1 class="persomnia-title text-[3.8rem] md:text-[8rem] leading-none md:leading-[1] md:pb-[0.25em] whitespace-nowrap">
-        PERSOMNIA
-      </h1>
+<body class="min-h-screen flex items-center justify-center px-4 py-10">
+<!-- Inner gradient box -->
+<div class="rounded-2xl bg-gradient-to-b from-[#fd7a1b] to-[#fcf5ed] p-6 md:p-12 w-full max-w-5xl text-center relative overflow-hidden h-[650px] flex flex-col justify-between">
+
+  <!-- Floating image and heading -->
+  <div class="relative w-full text-center">
+    <img src="./images/drink.png"
+         alt="Drink"
+         class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[-5%] max-w-[32rem] z-20 pointer-events-none" />
     
-      <!-- Paragraph -->
-      <p class="persomnia-desc text-base md:text-[1.3rem] leading-relaxed md:max-w-[60%]">
-        <i>(n)</i> Where forgotten selves gather in silence, waiting to be named. They hover at the edge of memory—unfinished, unseen, still listening.
-        The journey begins when you realize
-        <a href="#" class="italic underline hover:text-orange-400 transition">this line is a door.</a>
-      </p>
-    </div>    
+    <h1 class="font-nimbus text-[clamp(3.7rem,9vw,8rem)] text-[#f3f0e0] leading-none z-10 max-w-full">
+      PERSOMNIA
+    </h1>
   </div>
+
+  <!-- Buttons -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center">
+    <button class="font-artemisia text-[#fd7a1b] border-2 border-[#fd7a1b] px-6 py-2 rounded-full hover:bg-[#fd7a1b] hover:text-[#fcf5ed] transition-all">
+      Click Here
+    </button>
+    <button class="font-artemisia text-[#fd7a1b] border-2 border-[#fd7a1b] px-6 py-2 rounded-full hover:bg-[#fd7a1b] hover:text-[#fcf5ed] transition-all">
+      Click Here
+    </button>
+    <button class="font-artemisia text-[#fd7a1b] border-2 border-[#fd7a1b] px-6 py-2 rounded-full hover:bg-[#fd7a1b] hover:text-[#fcf5ed] transition-all">
+      Click Here
+    </button>
+    <button class="font-artemisia text-[#fd7a1b] border-2 border-[#fd7a1b] px-6 py-2 rounded-full hover:bg-[#fd7a1b] hover:text-[#fcf5ed] transition-all">
+      Click Here
+    </button>
+  </div>
+
+</div>
+
 </body>
 </html>
-

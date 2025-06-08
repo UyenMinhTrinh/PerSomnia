@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Misty Bloomlet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Elika Gorica';
+      src: url('./fonts/ElikaGorica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-title {
+      font-family: 'Elika Gorica', serif;
+    }
+
+    .font-body {
+      font-family: 'GFS Artemisia', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center text-[#6ba047] bg-[radial-gradient(circle,_#d6fbd7_35%,_#fff8e2_100%)] px-6 py-10">
+
+  <!-- INTRO SCREEN -->
+  <div id="introScreen" class="flex flex-col items-center text-center">
+
+  <p class="text-sm md:text-base font-body tracking-wide font-semibold mb-4">
+    ARE YOU LOST? NO. YOU ARE EXACTLY WHERE<br/>
+    THE WIND WANTS YOU TO BE
+  </p>
+
+<h1 class="text-6xl md:text-8xl font-title leading-none mb-8">
+  MISTY<br />BLOOMLET
+</h1>
+
+  <button onclick="revealNext()" class="px-6 py-3 border-2 border-[#6ba047] rounded-full text-sm font-body hover:bg-[#6ba047] hover:text-[#d6fbd7] transition-all">
+    Move Now
+  </button>
+  
+  </div>
+  
+<!-- CHARACTER SCREEN -->
+<div id="mistyBloomletScreen" class="hidden w-full max-w-6xl mx-auto flex flex-col items-center gap-12">
+
+  <!-- Top Section: Image + Description -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+    <!-- Image + Title -->
+    <div class="flex flex-col items-center text-center">
+      <img
+          id="mistyImage"
+          src="./images/misty-bloomlet.png"
+          alt="Misty Bloomlet"
+          class="w-72 md:w-[28rem] cursor-pointer transition duration-300 ease-in-out"
+        />
+      <p class="font-body text-xl md:text-2xl font-bold mt-4 tracking-wide">MISTY BLOOMLET</p>
+    </div>
+
+    <!-- Description -->
+    <div class="text-sm md:text-base space-y-5 text-center font-body max-w-md">
+      <p>
+       ✩°𓏲⋆🌿. ⋆⸜ 🍵✮˚
+      </p>
+      <br />
+      <p>
+        Vanishing mid-sentence because the light hit a flower just right.
+      </p>
+      <p>
+        Collecting random objects with no memory of why.
+      </p>
+      <p>
+        Seeming wise, but really just forgot what you were saying.
+      </p>
+      <br />
+      <p>
+       ✩°𓏲⋆🌿. ⋆⸜ 🍵✮˚
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Section: Poetic Paragraphs -->
+  <div class="text-sm md:text-base font-body max-w-3xl mx-auto space-y-10 px-4 text-left text-[#6ba047] leading-relaxed">
+    <p class="max-w-[38rem] mx-auto ml-0">
+      You exist in a constant state of "Wait, what was I doing again?" People talk to you, but midway through the conversation, you’re already mentally composing an epic novel about a lonely flower growing on the side of a cliff. Will you ever write it? No.
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-6 md:ml-20">
+      Your navigation system is just "vibes". You don’t go places, you drift. Some say you’re unpredictable; others say you probably run on moonlight and sheer instinct.
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-12 md:ml-40">
+      Reality is optional. You got distracted by sunlight on a puddle and forgot what year it was. Time is fake. So are deadlines. Poetic procrastination is your lifestyle.
+    </p>
+  </div>
+
+
+
+  <script>
+  const gentleImage = document.getElementById('mistyImage');
+  const images = ["./images/misty-bloomlet.png", "./images/gentle-whisper2.png"];
+  let currentIndex = 0;
+
+    gentleImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      gentleImage.src = images[currentIndex];
+    });
+
+    function revealNext() {
+      document.getElementById('introScreen').classList.add('hidden');
+      document.getElementById('mistyBloomletScreen').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>

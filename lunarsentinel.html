@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lunar Sentinel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Elika Gorica';
+      src: url('./fonts/ElikaGorica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-title {
+      font-family: 'Elika Gorica', serif;
+    }
+
+    .font-body {
+      font-family: 'GFS Artemisia', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- INTRO SCREEN -->
+  <div id="introScreen" class="flex flex-col items-center justify-center text-center text-[#f3f0e0] bg-[radial-gradient(circle,_#061934_35%,_#314a79_100%)] w-full min-h-screen px-6 py-10">
+    <p class="text-sm md:text-base font-body font-semibold mb-4 text-center mx-auto max-w-[35rem] leading-snug">
+    YOU DON'T CHASE THE CHAOS — YOU CATALOG IT, NEUTRALIZE IT, AND FILE IT UNDER 'SOLVED' BEFORE LUNCH.
+    </p>
+
+    <h1 class="text-6xl md:text-8xl font-title leading-none mb-8">
+      LUNAR<br />SENTINEL
+    </h1>
+
+    <button onclick="revealNext()" class="px-6 py-3 border-2 border-[#f3f0e0] rounded-full text-sm font-body hover:bg-[#f3f0e0] hover:text-[#061934] transition-all">
+      Move Now
+    </button>
+  </div>
+
+  <!-- CHARACTER SCREEN -->
+  <div id="lunarSentinelScreen" class="hidden w-full min-h-screen flex flex-col items-center gap-12 bg-[#f3f0e0] text-[#01224e] px-6 py-12">
+
+    <!-- Top Section -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+      <!-- Image + Title -->
+      <div class="flex flex-col items-center text-center">
+        <img
+          id="lunarImage"
+          src="./images/lunar-sentinel.png"
+          alt="Lunar Sentinel"
+          class="w-72 md:w-[28rem] cursor-pointer transition duration-300 ease-in-out"
+        />
+        <p class="font-body text-xl md:text-2xl font-bold mt-4 tracking-wide">LUNAR SENTINEL</p>
+      </div>
+
+      <!-- Description -->
+      <div class="text-sm md:text-base space-y-5 text-center font-body max-w-md">
+        <p>✩₊˚.⋆☾⋆⁺₊✧</p>
+        <br />
+        <p>Reliable to a terrifying degree. You never miss a deadline—even mid-apocalypse.</p>
+        <p>Emotionally stable, structurally sound. Basically a walking support beam in human form.</p>
+        <p>Thinks vibes are fake. Schedules the chaos, fixes it, moves on.</p>
+        <br />
+        <p>✩₊˚.⋆☾⋆⁺₊✧</p>
+      </div>
+    </div>
+
+    <!-- Poetic Paragraphs -->
+    <div class="text-sm md:text-base font-body max-w-3xl mx-auto space-y-10 px-4 text-left leading-relaxed">
+      <p class="max-w-[38rem] mx-auto ml-0">
+        You are the universe’s last line of defense against complete nonsense. 
+        While everyone else is crying, glitching, or spontaneously combusting, you’re fixing timelines and muttering, “I told you so.”
+      </p>
+      <p class="max-w-[38rem] mx-auto ml-6 md:ml-20">
+        Your vibe is divine order with a side of exhausted competence. 
+        You didn’t ask to be the responsible one, but someone had to keep gravity turned on and the stars in alphabetical order.
+      </p>
+      <p class="max-w-[38rem] mx-auto ml-12 md:ml-40">
+        People say you’re cold, but that’s just your “I’m too busy stabilizing reality” face. 
+        You feel deeply—you just file your emotions under ‘To Be Processed Once The Apocalypse Is Over.’
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const gentleImage = document.getElementById('lunarImage');
+    const images = ["./images/lunar-sentinel.png", "./images/lunar-sentinel2.png"];
+    let currentIndex = 0;
+
+    gentleImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      gentleImage.src = images[currentIndex];
+    });
+
+    function revealNext() {
+      document.getElementById('introScreen').classList.add('hidden');
+      document.getElementById('lunarSentinelScreen').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+

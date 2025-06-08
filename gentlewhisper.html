@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gentle Whisper</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Elika Gorica';
+      src: url('./fonts/ElikaGorica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-title {
+      font-family: 'Elika Gorica', serif;
+    }
+
+    .font-body {
+      font-family: 'GFS Artemisia', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-center text-[#c84d72] bg-[radial-gradient(circle,_#ffc8d5_35%,_#f3f0e0_100%)] px-6 py-10">
+
+  <!-- INTRO SCREEN -->
+  <div id="introScreen" class="flex flex-col items-center text-center">
+
+  <p class="text-sm md:text-base font-body tracking-wide font-semibold mb-4">
+    YOU COLLECT LOST THINGS—MEMORIES, EMOTIONS,<br/>
+    RANDOM SHINY OBJECTS
+  </p>
+
+  <h1 class="text-6xl md:text-8xl font-title leading-none mb-8">
+    GENTLE<br />WHISPER
+  </h1>
+
+  <button onclick="revealNext()" class="px-6 py-3 border-2 border-[#c23361] rounded-full text-sm font-body hover:bg-[#c23361] hover:text-[#ffc8d5] transition-all">
+    Move Now
+  </button>
+  
+  </div>
+  
+<!-- CHARACTER SCREEN -->
+<div id="gentleWhisperScreen" class="hidden w-full max-w-6xl mx-auto flex flex-col items-center gap-12">
+
+  <!-- Top Section: Image + Description -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+    <!-- Image + Title -->
+    <div class="flex flex-col items-center text-center">
+      <img
+          id="gentleImage"
+          src="./images/gentle-whisper.png"
+          alt="Gentle Whisper"
+          class="w-72 md:w-[28rem] cursor-pointer transition duration-300 ease-in-out"
+        />
+      <p class="font-body text-xl md:text-2xl font-bold mt-4 tracking-wide">GENTLE WHISPER</p>
+    </div>
+
+    <!-- Description -->
+    <div class="text-sm md:text-base space-y-5 text-center font-body max-w-md">
+      <p>
+       ｡ ₊°༺❤︎༻°₊ ｡
+      </p>
+      <br />
+      <p>
+        Moves through life like a soft breeze. You may not make much noise, but your presence lingers long after you’re gone.
+      </p>
+      <p>
+        Speaks in quiet magic. A gentle word or look changes the whole vibe.
+      </p>
+      <p>
+        Soft presence, deep strength. Delicate, but unshakable.
+      </p>
+      <br />
+      <p>
+       ｡ ₊°༺❤︎༻°₊ ｡
+      </p>
+    </div>
+  </div>
+
+  <!-- Bottom Section: Poetic Paragraphs -->
+  <div class="text-sm md:text-base font-body max-w-3xl mx-auto space-y-10 px-4 text-left text-[#c23361] leading-relaxed">
+    <p class="max-w-[38rem] mx-auto ml-0">
+      You exist like a quiet song in a noisy world. People don’t always hear you, but they feel your presence long after you’ve gone.
+      You slip into places like a comforting breeze, leaving petals and soft echoes in your wake.
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-6 md:ml-20">
+      You speak in half-smiles and gentle gestures. While others are loud, you are steady. You don’t need to take up space to own the room—
+      your energy does it for you.
+    </p>
+    <p class="max-w-[38rem] mx-auto ml-12 md:ml-40">
+      Your presence is like a melody stuck in someone’s head. Not overwhelming, but persistent, soft, and impossible to ignore.
+      People don’t always know why they feel better around you—they just do.
+    </p>
+  </div>
+
+
+
+  <script>
+  const gentleImage = document.getElementById('gentleImage');
+  const images = ["./images/gentle-whisper.png", "./images/gentle-whisper2.png"];
+  let currentIndex = 0;
+
+    gentleImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      gentleImage.src = images[currentIndex];
+    });
+
+    function revealNext() {
+      document.getElementById('introScreen').classList.add('hidden');
+      document.getElementById('gentleWhisperScreen').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astral Warden</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @font-face {
+      font-family: 'Elika Gorica';
+      src: url('./fonts/ElikaGorica.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'GFS Artemisia';
+      src: url('./fonts/GFSArtemisiaBold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    .font-title {
+      font-family: 'Elika Gorica', serif;
+    }
+
+    .font-body {
+      font-family: 'GFS Artemisia', serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- INTRO SCREEN -->
+  <div id="introScreen" class="flex flex-col items-center justify-center text-center text-[#f4e9de] bg-[radial-gradient(circle,_#340606_35%,_#7b3a1f_100%)] w-full min-h-screen px-6 py-10">
+    <p class="text-sm md:text-base font-body font-semibold mb-4 text-center mx-auto max-w-[35rem] leading-snug">
+    YOU FOLLOW THW RULES. UNLESS THEY'RE STUPID.<br/>
+    THEN YOU REWRITE THEM.<br />
+    </p>
+
+    <h1 class="text-6xl md:text-8xl font-title leading-none mb-8">
+      ASTRAL<br />WARDEN
+    </h1>
+
+    <button onclick="revealNext()" class="px-6 py-3 border-2 border-[#f4e9de] rounded-full text-sm font-body hover:bg-[#f4e9de] hover:text-[#340606] transition-all">
+      Move Now
+    </button>
+  </div>
+
+  <!-- CHARACTER SCREEN -->
+  <div id="astralWardenscreen" class="hidden w-full min-h-screen flex flex-col items-center gap-12 bg-[#f4e9de] text-[#7b3a1f] px-6 py-12">
+
+    <!-- Top Section -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+      <!-- Image + Title -->
+      <div class="flex flex-col items-center text-center">
+        <img
+          id="astrImage"
+          src="./images/astral-warden.png"
+          alt="Astral Warden"
+          class="w-72 md:w-[28rem] cursor-pointer transition duration-300 ease-in-out"
+        />
+        <p class="font-body text-xl md:text-2xl font-bold mt-4 tracking-wide">ASTRAL WARDEN</p>
+      </div>
+
+      <!-- Description -->
+      <div class="text-sm md:text-base space-y-5 text-center font-body max-w-md">
+        <p>⋆｡‧˚ʚ🍒ɞ˚‧｡⋆</p>
+        <br />
+        <p>Schedules magic like meetings. Portals open on time—or not at all.</p>
+        <p>Alphabetizes constellations for fun. Chaos gets color-coded.</p>
+        <p>Manages dreams like a workplace incident. Delegates, documents, follows up.</p>
+        <br />
+        <p>⋆｡‧˚ʚ🍒ɞ˚‧｡⋆</p>
+      </div>
+    </div>
+
+    <!-- Poetic Paragraphs -->
+    <div class="text-sm md:text-base font-body max-w-3xl mx-auto space-y-10 px-4 text-left leading-relaxed">
+      <p class="max-w-[38rem] mx-auto ml-0">
+        You are the universal update nobody asked for but absolutely needed. While dreams drift and chaos reigns, you’re out here alphabetizing constellations and making sure gravity shows up on time.
+      </p>
+      <p class="max-w-[38rem] mx-auto ml-6 md:ml-20">
+        You don’t believe in “go with the flow”—you are the flow. And if the dream starts getting weird? You audit it, restructure it, and send it back with suggestions and a highlighted PDF.
+      </p>
+      <p class="max-w-[38rem] mx-auto ml-12 md:ml-40">
+        You bring “main character” energy with a project manager twist. Others dream. You deliver. You’re not afraid to pause destiny mid-transition to double-check the instructions.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const gentleImage = document.getElementById('astrImage');
+    const images = ["./images/astral-warden.png", "./images/lunar-sentinel2.png"];
+    let currentIndex = 0;
+
+    gentleImage.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      gentleImage.src = images[currentIndex];
+    });
+
+    function revealNext() {
+      document.getElementById('introScreen').classList.add('hidden');
+      document.getElementById('astralWardenscreen').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
+
